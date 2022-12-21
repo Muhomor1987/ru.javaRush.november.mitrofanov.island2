@@ -1,9 +1,9 @@
 package game;
 
-import Kinds.Bear;
-import structure.Animal;
+import Kinds.*;
 import structure.Island;
 import structure.KindOfAnimal;
+import Task.SettlementBear;
 
 public class StartGame {
     public static void main(String[] args) {
@@ -15,15 +15,36 @@ public class StartGame {
 
         KindOfAnimal kindOfAnimal = new KindOfAnimal(island);
         kindOfAnimal.createKindBear();
+/*        Class<? extends KindOfAnimal> kindOfAnimalClass = kindOfAnimal.getClass();
+        Method[] methodsOFCreateAnimal= kindOfAnimal.getClass().getDeclaredMethods();
+        for (int i = 0; i < methodsOFCreateAnimal.length; i++) {
+            kindOfAnimal???.methodsOFCreateAnimal[i].getName();
+        }*/
+        //Как это можно использовать??
         System.out.println("Your island is inhabited: ");
-        kindOfAnimal.listClassAnimals.stream().forEach(x-> {
-            try {
-                System.out.println(x.getSimpleName()+" "+x.getField("totalCounterKind").);
-            } catch (NoSuchFieldException e) {
-                throw new RuntimeException(e);
-            }
-        });
+        kindOfAnimal.createKindBear();
+        System.out.println(Bear.class.getSimpleName()+"-"+ Bear.totalCounterKind);
+        kindOfAnimal.createKindWolf();
+        System.out.println(Wolf.class.getSimpleName()+"-"+ Wolf.totalCounterKind);
+        kindOfAnimal.createKindHorse();
+        System.out.println(Horse.class.getSimpleName()+"-"+ Horse.totalCounterKind);
+        kindOfAnimal.createKindHog();
+        System.out.println(Hog.class.getSimpleName()+"-"+ Hog.totalCounterKind);
+        kindOfAnimal.createKindDuck();
+        System.out.println(Duck.class.getSimpleName()+"-"+ Bear.totalCounterKind);
+        kindOfAnimal.createKindCaterpillar();
+        System.out.println(Caterpillar.class.getSimpleName()+"-"+ Caterpillar.totalCounterKind);
+        //или здесь выводить статические переменные классов из списка??
 
+
+        Thread t = new Thread(new SettlementBear());
+        t.start();
+        try {
+            t.join();
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+        System.out.println(Island.animalsQueueByCreatorAnimal.size());
 
     }
 }

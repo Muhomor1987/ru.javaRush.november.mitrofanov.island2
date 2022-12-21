@@ -1,5 +1,8 @@
 package structure;
 
+import description.Organism;
+
+import java.util.concurrent.ConcurrentLinkedQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -14,7 +17,7 @@ public class Island {
         this.width = ThreadLocalRandom.current().nextInt(200);
         this.totalLocations = length*width;
         this.locations = new Location[length][width];
-        this.animalsQueueByCreatorAnimal = new LinkedBlockingDeque<>(500);
+        Island.animalsQueueByCreatorAnimal = new LinkedBlockingDeque<>();
 
     }
 
@@ -24,10 +27,10 @@ public class Island {
         this.width = width;
         this.totalLocations = length*width;
         this.locations = new Location[length][width];
-        this.animalsQueueByCreatorAnimal = new LinkedBlockingDeque<>(500);
+        Island.animalsQueueByCreatorAnimal = new LinkedBlockingDeque<>();
     }
 
-    public  LinkedBlockingDeque<? extends Animal> animalsQueueByCreatorAnimal;
+    static public  LinkedBlockingDeque<Animal> animalsQueueByCreatorAnimal;
 
     public  Location[][] locations;
 
