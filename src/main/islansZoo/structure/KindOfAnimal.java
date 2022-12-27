@@ -19,9 +19,9 @@ public class KindOfAnimal {
                         nextInt(Settings.maxOfAnimalsOnSquad *island.totalLocations));
         listClassAnimals.add(Bear.class);
         listClassPredators.add(Bear.class);
-        Bear.MAP_OF_FOOD.put(Horse.class,40);
-        Bear.MAP_OF_FOOD.put(Hog.class,50);
-        Bear.MAP_OF_FOOD.put(Duck.class,10);
+        Bear.mapOfFood.put(Horse.class,40);
+        Bear.mapOfFood.put(Hog.class,50);
+        Bear.mapOfFood.put(Duck.class,10);
 
     }
 
@@ -32,9 +32,9 @@ public class KindOfAnimal {
                         nextInt(Settings.maxOfAnimalsOnSquad *island.totalLocations));
         listClassAnimals.add(Wolf.class);
         listClassPredators.add(Wolf.class);
-        Wolf.MAP_OF_FOOD.put(Horse.class,10);
-        Wolf.MAP_OF_FOOD.put(Hog.class,15);
-        Wolf.MAP_OF_FOOD.put(Duck.class,40);
+        Wolf.mapOfFood.put(Horse.class,10);
+        Wolf.mapOfFood.put(Hog.class,15);
+        Wolf.mapOfFood.put(Duck.class,40);
     }
 
     public void createKindHorse() {
@@ -53,7 +53,7 @@ public class KindOfAnimal {
                         nextInt(Settings.maxOfAnimalsOnSquad *island.totalLocations));
         listClassAnimals.add(Hog.class);
         listClassMixedTypeOfFood.add(Hog.class);
-        Hog.MAP_OF_FOOD.put(Caterpillar.class,90);
+        Hog.mapOfFood.put(Caterpillar.class,90);
     }
 
     public void createKindDuck() {
@@ -63,7 +63,7 @@ public class KindOfAnimal {
                         nextInt(Settings.maxOfAnimalsOnSquad *island.totalLocations));
         listClassAnimals.add(Hog.class);
         listClassMixedTypeOfFood.add(Hog.class);
-        Hog.MAP_OF_FOOD.put(Caterpillar.class,90);
+        Hog.mapOfFood.put(Caterpillar.class,90);
     }
 
     public void createKindCaterpillar() {

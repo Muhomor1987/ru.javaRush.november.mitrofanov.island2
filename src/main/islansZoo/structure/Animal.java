@@ -22,7 +22,7 @@ public class Animal {
 
 
 
-    public static HashMap<Class<? extends Animal>, Integer> MAP_OF_FOOD;
+    public static HashMap<Class<? extends Animal>, Integer> mapOfFood;
 
     public static void setValueOfConstants(Double weightMax, Integer maxOfAnimalsOnSquad,Integer SPEED,
                                     Double saturation){
@@ -30,7 +30,7 @@ public class Animal {
         Animal.maxOfAnimalsOnSquad = maxOfAnimalsOnSquad;
         Animal.speed = SPEED;
         Animal.saturation = saturation;
-        Animal.MAP_OF_FOOD = new HashMap<>() {
+        Animal.mapOfFood = new HashMap<>() {
         };
     }
 
