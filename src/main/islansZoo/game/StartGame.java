@@ -36,8 +36,10 @@ public class StartGame {
         System.out.println(Caterpillar.class.getSimpleName()+"-"+ Caterpillar.totalCounterKind);
         //или здесь выводить статические переменные классов из списка??
 
+        System.out.println(Bear.totalCounterKind);
+        System.out.println(Wolf.totalCounterKind);
 
-        Thread t = new Thread(new SettlementBear());
+        /*Thread t = new Thread(new SettlementBear());
         t.start();
         try {
             t.join();
@@ -45,6 +47,8 @@ public class StartGame {
             throw new RuntimeException(e);
         }
         System.out.println(Island.animalsQueueByCreatorAnimal.size());
+        */
+
 
     }
 }
